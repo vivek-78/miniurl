@@ -53,21 +53,3 @@ app.get("/:urlCode",async(req,res)=>{
 app.listen(9000,()=>{
     console.log("port is running on",port);
 }); 
-
-/*
-app.get("/",async(req,res)=>{
-   const urlName = req.body.url;
-   const fetchedUrl = await urlModel.findOne({ urlName:urlName },{ _id:0,urlCode:1,urlName:1 });
-   if(!fetchedUrl){ 
-    const urlCode = new Date().getTime().toString(36) + Math.random().toString(36).slice(10)
-    urlModel.create({
-        urlCode,
-        urlName:urlName
-    })
-    res.send("registered a new url\nhttp://localhost:9000/"+urlCode);
-   }else{
-   res.send("fetched directly\nhttp://localhost:9000/"+fetchedUrl.urlCode);
-  }
-  console.log(res.statusCode);
-})
-*/
